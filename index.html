@@ -24,17 +24,50 @@
     </div>
     <div class="card">
       <h2>Using terminal of our EC2 instance:</h2>
-      <p>Check the Video:</p>
-
-    </div>
+      <ol>
+        <li>You should have running instance in Aws.</li>
+        <li>Access your server through ssh.</li>
+        <li>Open your ssh terminal</li>
+        <li>Check the Defualt TimeZone with following command:<blockquote>timedatectl</blockquote</li>
+        <li>Now set the TimeZone according to your choice using this command:<blockquote>timedatectl set-timezone EST</blockquote></li>
+      </ol>
+   </div>
     <div class="card">
       <h2>Using Script in our php file:</h2>
-      <p>Check the Video:</p>
+      <p>Use the below code in your php file:</p>
+      <xmp>
+        <?php
+                date_default_timezone_set("Asia/Kolkata");
+        ?>
+     </xmp>
     </div>
     <div class="card">
       <h2>Using the php.ini file:</h2>
-      <p>Check the Video:</p>
+      <ol>
+        <li>Find the php.ini file.</li>
+        <li>Follow the direction likewise:<blockquote>cd > cd/etc > cd php5 > cd apache2 > ls > nano php.ini </blockquote></li>
+        <li>Find this line:
+          <xmp>
+            [Date]
+            ; Defines the default time zone used by the date functions
+            ; http://php.net/date.timezone
+            ;date.timezone =
+          </xmp>
+       </li>
+       <li>Edit timezone likewise:
+         <xmp>
+           [Date]
+          ; Defines the default time zone used by the date functions
+          ; http://php.net/date.timezone
+            date.timezone =Asia/Kolkata
+        </xmp>
+      </li>
+      <li>restart your server using this command:<blockquote>service apache2 restart</blockquote></li>
+    </ol>
     </div>
+    <div class="card">
+      <h2>Check full video:</h2>
+   </div>
   </div>
   <div class="rightcolumn">
     <div class="card">
